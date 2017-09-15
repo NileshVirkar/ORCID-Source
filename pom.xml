@@ -216,7 +216,7 @@ the software.
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>findbugs-maven-plugin</artifactId>
-                    <version>2.3.3</version>
+                    <version>3.0.4</version>
 					<configuration>
 					<xmlOutput>true</xmlOutput>
 					<findbugsXmlOutputDirectory>${project.build.directory}/findbugs/${project.name}</findbugsXmlOutputDirectory>
@@ -426,7 +426,7 @@ the software.
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>findbugs-maven-plugin</artifactId>
-                <version>2.3.3</version>
+                <version>3.0.4</version>
 				<configuration>
 					<xmlOutput>true</xmlOutput>
 					<findbugsXmlOutputDirectory>${project.build.directory}/findbugs/${project.name}</findbugsXmlOutputDirectory>

@@ -138,6 +138,7 @@ the software.
                     <threadCount>4</threadCount>
                     <perCoreThreadCount>true</perCoreThreadCount>
                     -->
+					<testFailureIgnore>true</testFailureIgnore>
                     <excludes>
                         <exclude>**/*BaseTest.java</exclude>
                         <exclude>**/integration/**.java</exclude>
@@ -150,6 +151,10 @@ the software.
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>findbugs-maven-plugin</artifactId>
+				<configuration>
+					<xmlOutput>true</xmlOutput>
+					<findbugsXmlOutputDirectory>${project.build.directory}/findbugs/${project.name}</findbugsXmlOutputDirectory>
+				</configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -174,6 +179,26 @@ the software.
                 <groupId>com.mycila.maven-license-plugin</groupId>
                 <artifactId>maven-license-plugin</artifactId>
             </plugin>
+			<plugin>
+				<groupId>com.atlassian.maven.plugins</groupId>
+				<artifactId>maven-clover2-plugin</artifactId>
+				<version>4.0.6</version>
+				<configuration>
+					<generateXml>true</generateXml>
+					<generateHtml>false</generateHtml>
+					<generatePdf>false</generatePdf>
+					<generateJson>false</generateJson>
+				</configuration>
+				<executions>
+					<execution>
+						<phase>site</phase>
+						<goals>
+							<goal>instrument</goal>
+							<goal>clover</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
         </plugins>
 
         <pluginManagement>
@@ -192,6 +217,10 @@ the software.
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>findbugs-maven-plugin</artifactId>
                     <version>2.3.3</version>
+					<configuration>
+					<xmlOutput>true</xmlOutput>
+					<findbugsXmlOutputDirectory>${project.build.directory}/findbugs/${project.name}</findbugsXmlOutputDirectory>
+				</configuration>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -398,6 +427,10 @@ the software.
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>findbugs-maven-plugin</artifactId>
                 <version>2.3.3</version>
+				<configuration>
+					<xmlOutput>true</xmlOutput>
+					<findbugsXmlOutputDirectory>${project.build.directory}/findbugs/${project.name}</findbugsXmlOutputDirectory>
+				</configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
